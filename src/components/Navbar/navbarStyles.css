@@ -1,0 +1,51 @@
+nav{
+    width: 100%;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+}
+#root{
+    height: 100%;
+    width: 100%;    
+}
+
+
+.logo{
+    height: 10rem;
+    width: auto;
+}
+
+nav  a{
+    color: white;
+    text-decoration: none;
+
+
+    position: relative;
+}
+
+nav > ul a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+nav > ul a:hover:before{
+    visibility: visible;
+    width: 100%;
+}
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+    font-size: 2rem;
+}

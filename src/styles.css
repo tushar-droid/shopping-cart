@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Gruppo';
+    src: url('./assets/Gruppo-Regular.ttf');
+}
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;    
+    display: flex;
+    background:url('./assets/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: 'Gruppo';
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.content{
+    flex:1;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.hero-statement{
+    font-size: 5rem;
+    font-weight: 200;
+    text-align: center;
+}
+.call-to-action{
+    align-self: center;
+    background-color: unset;
+    color: white;
+    border: none;
+    outline: solid thin white;
+    border-radius: 2rem;
+    font-family: 'Gruppo';
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    background: linear-gradient(to left, transparent 50%, white 50%) right;
+    background-size: 200% 100%;
+    transition: .3s ease-out;
+
+}
+
+.call-to-action:hover{
+    background-position: left;
+    color: black;
+}
