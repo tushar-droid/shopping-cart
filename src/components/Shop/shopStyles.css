@@ -1,0 +1,11 @@
+.shop-content{
+    flex:1;
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+
+}
+
+.glassit{
+    backdrop-filter: blur(10px);
+}

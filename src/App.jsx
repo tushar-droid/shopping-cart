@@ -1,12 +1,15 @@
 import './styles.css'
 import Navbar from './components/Navbar/Navbar';
 
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+
 const App = () =>{
+    const location = useLocation().pathname;
+    
     return (
         <>
             <Navbar/>
-            <div className='content'>
+            <div /*className='home-content'*/ className={location==='/'? 'home-content' : 'shop-content'} >
                 <Outlet/>
             </div>
 
