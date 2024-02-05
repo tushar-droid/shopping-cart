@@ -9,7 +9,7 @@ const App = () =>{
     return (
         <>
             <Navbar/>
-            <div /*className='home-content'*/ className={location==='/'? 'home-content' : 'shop-content'} >
+            <div  className={location==='/'? 'home-content' : location==='/shop'? 'shop-content': location==='/cart'? 'cart-content': 'product-content' } >
                 <Outlet/>
             </div>
 

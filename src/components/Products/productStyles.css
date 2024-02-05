@@ -1,0 +1,28 @@
+.product-content{
+    width:90%;
+    display: flex;
+    background: rgba(39, 50, 68, 0.61);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(39, 50, 68, 0.44);
+    margin-bottom: 100px;
+    height: 100%;
+}
+
+.image-container{
+    flex: 1;
+    margin: 2%;
+    
+}   
+
+.description-container{
+    flex: 1;
+    margin: 2%;
+
+}
+
+.description-container > * {
+    margin: 5%;
+}
