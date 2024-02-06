@@ -5,7 +5,9 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 const App = () =>{
     const location = useLocation().pathname;
-    
+
+
+
     return (
         <>
             <Navbar/>

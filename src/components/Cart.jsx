@@ -1,12 +1,19 @@
+/* eslint-disable react/prop-types */
 
-const Cart = () =>{
+const Cart = ({inCart, deleteGame}) =>{
 
     return (
-        <>
-            <h1>This is the cart Component</h1>
-        </>
+        <ul>
+            {inCart.map((game) => 
+            <li key={game.id}>
+                <p>{game.id}</p>
+                <p>{game.name}</p>                
+                <p>{game.price}</p>
+                <button onClick={() => deleteGame(game.id)}>Delete</button>
+                </li>)}
+        </ul>
     )
 
-}
+}  
 
 export default Cart;

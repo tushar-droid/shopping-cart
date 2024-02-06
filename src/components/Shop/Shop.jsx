@@ -31,16 +31,18 @@ const Shop = () =>{
       }, []);
 
 
+
     return (
         <>
             {
                 responseData.map((game) =>                
               {                
                 const price =  Math.floor((Math.random() * 100)) + 0.99;
-                return (<Link
-                key={game.id}
-                to={`/shop/${game.id}`}
-                state= {{game: game, price: price}}
+                return (
+                <Link
+                  key={game.id}
+                  to={`/shop/${game.id}`}
+                  state= {{game: game, price: price}}
                 >
                   <Card
                     game_details = {game}
