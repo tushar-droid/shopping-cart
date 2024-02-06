@@ -12,8 +12,16 @@ const Product = ({addToCart, inCart, deleteGame}) =>{
     const { game, price} = location.state
     const [responseData, setResponseData] = useState([]);
     const [description, setDescription] = useState('');
+    useEffect(() =>{
+        const elem = document.body;
+        elem.style = 'background: none; background-color: rgb(18, 26, 46); ';
+        return (() => {elem.style = 'background-color: none ';
 
+        })
+    });
     
+
+
     useEffect(() => {
         const getData = async () => {
           const response = await axios.get(
@@ -44,7 +52,7 @@ const Product = ({addToCart, inCart, deleteGame}) =>{
     return ( 
         <>
             <div className="image-container">
-                <Carousel>
+                <Carousel autoPlay={true} >
                     {
                         game.short_screenshots.map((im) => <div key={game.id} className="active-image"><img src={im.image}/></div>)
                     }

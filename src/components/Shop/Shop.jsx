@@ -7,13 +7,7 @@ const Shop = () =>{
     console.log()
     const KEY = "43fcf1bb9e6a4fbe98ceb93a4c7de24e";
     const [responseData, setResponseData] = useState([]);
-    useEffect(() =>{
-        const elem = document.body;
-        elem.classList.add('glassit');
-        return (() => {elem.classList.remove('glassit');
-
-        })
-    });
+    const [showData, setShowData] = useState(true);
     useEffect(() => {
         const elem = document.body;
         const getData = async () => {
@@ -30,12 +24,26 @@ const Shop = () =>{
         
       }, []);
 
+      
+
+  
 
 
     return (
         <>
+        <div className="left-product-page">
+        <h1 onClick={() => setShowData(true)} >All Games</h1>
+        <h1 onClick={() => setShowData(false)}>Featured Games</h1>
+        <h1 onClick={() => setShowData(false)}>Top 30</h1>
+        <h1 onClick={() => setShowData(false)}>This week</h1>
+        <h1 onClick={() => setShowData(false)}>Best of the Year</h1>
+        <h1 onClick={() => setShowData(false)}>Platforms</h1>
+        <h1 onClick={() => setShowData(false)}>Stores</h1>
+        <h1 onClick={() => setShowData(false)}>Collections</h1>
+        </div>
+        <div className="right-product-page">
             {
-                responseData.map((game) =>                
+             showData?responseData.map((game) =>                
               {                
                 const price =  Math.floor((Math.random() * 100)) + 0.99;
                 return (
@@ -49,8 +57,9 @@ const Shop = () =>{
                     price = {price} 
                   />
                 </Link>)}
-                )
+                ):<h1>Unfortunately the API does not provide this Data the left bar is just a proof of concept</h1>
             }
+          </div>
         </>
     )
 }

@@ -4,6 +4,9 @@ nav{
     color: white;
     align-items: center;
     justify-content: space-between;
+    z-index: 100;
+    background-color: rgb(18, 26, 46);
+
 }
 #root{
     height: 100%;
@@ -12,8 +15,10 @@ nav{
 
 
 .logo{
-    height: 10rem;
+    height: 8rem;
     width: auto;
+
+
 }
 
 nav  a{
