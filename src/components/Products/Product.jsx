@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-const Product = ({addToCart, inCart}) =>{
+const Product = ({addToCart, inCart, deleteGame}) =>{
     const location =  useLocation();
     const KEY = "43fcf1bb9e6a4fbe98ceb93a4c7de24e";
     const { game, price} = location.state
@@ -62,7 +62,7 @@ const Product = ({addToCart, inCart}) =>{
                     <div className="right-container">
                         <h3 className="esrb-rating">ESRB rating: {game.esrb_rating ? game.esrb_rating.name : "none" }</h3>
                         <h3 className="rel-date">Released on: {game.released}</h3>
-                        <button className="add-to-cart-btn" onClick={() => addToCart(game,price)}>{checkIfInCart()? 'Added to Cart' : 'Add to Cart'}</button>
+                        <button className="add-to-cart-btn" onClick={checkIfInCart() ? () => {deleteGame(game.id); document.querySelector('.add-to-cart-btn').classList.remove('remove-from-cart') } : () => {addToCart(game,price); document.querySelector('.add-to-cart-btn').classList.add('remove-from-cart')}}>{checkIfInCart()? 'Remove from Cart' : 'Add to Cart'}</button>
                     </div>
                 </div>
                 <div className="bottom-product-description">

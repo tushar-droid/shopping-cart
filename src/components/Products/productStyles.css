@@ -65,3 +65,7 @@
 .add-to-cart-btn:hover{
     transform: scale(1.1);
 }
+
+.remove-from-cart{
+    background-color: red;
+}

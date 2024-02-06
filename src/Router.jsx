@@ -34,7 +34,7 @@ const Router = () =>{
                 {path:'/', element:<Home/>},
                 {path:'/cart', element:<Cart inCart={inCart} deleteGame={removeFromCart}/>},
                 {path:'/shop', element:<Shop/>},
-                {path:'/shop/:prodId', element:<Product addToCart={addToCart} inCart={inCart}/>}
+                {path:'/shop/:prodId', element:<Product addToCart={addToCart} inCart={inCart} deleteGame={removeFromCart}/>}
             ]
         }
 
