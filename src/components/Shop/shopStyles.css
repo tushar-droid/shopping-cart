@@ -35,12 +35,11 @@
 
 .left-product-page > *:hover{
     transform: scale(1.2) translateX(4rem);
-    
 }
 
 
 .right-product-page{
-    flex:3;
+    flex:4;
     display: grid;
     width: 90%;
     grid-template-columns: repeat(4, 1fr);
@@ -115,6 +114,28 @@
     font-size: 1.5rem;
 }
 
-/* .details > *{
-    outline: solid white;
-} */
+.span-prev{
+    grid-column: 2/3;    
+}
+
+.span-prev, .span-2{
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-btns{
+    background-color:rgb(27, 31, 55);
+    color: white;
+    border: none;
+    padding: 2rem 0rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation-btns:hover{
+    background-color:rgb(66, 73, 115);
+}
+
