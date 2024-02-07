@@ -17,7 +17,34 @@
     margin: 2%;
     display: flex;
     padding-top: 10rem;
+    position: relative;
 }   
+
+.back-btn{
+    position: absolute;
+    top: 4%;
+    height: 4rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(15, 16, 21, 0.85);
+    transition: all 0.3s ease-in-out;
+}
+
+.move-arrow{
+    transform: translateX(-25%);
+}
+.back-arrow{
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.back-btn:hover{
+    background-color:rgb(27, 31, 55);
+}
+
+
 
 .carousel-slider{
     box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
