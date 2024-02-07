@@ -139,3 +139,12 @@
     background-color:rgb(66, 73, 115);
 }
 
+.loading-data{
+    column-span: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 60vw;
+    font-size: 3rem;
+} 

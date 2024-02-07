@@ -10,18 +10,27 @@ const Shop = () =>{
     const [showData, setShowData] = useState(true);
     const [nextPage, setNextPage] = useState('');
     const [prevPage, setPrevPage] = useState('');
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         const elem = document.body;
         const getData = async () => {
-          console.log('Fetched data.')          
-          const response = await axios.get(
-            `https://api.rawg.io/api/games?key=${KEY}&page_size=40`,
-          );          
-          elem.style = 'height:100%';
-          setResponseData(response.data.results);
-          setNextPage(response.data.next);
-          setPrevPage(response.data.previous);
-        };        
+          console.log('Fetched data.')       
+          try
+          {
+
+            const response = await axios.get(
+              `https://api.rawg.io/api/games?key=${KEY}&page_size=40`,
+            )   
+            elem.style = 'height:100%';
+            setResponseData(response.data.results);
+            setNextPage(response.data.next);
+            setPrevPage(response.data.previous);
+          } catch(err){
+            console.log(err)
+          }  finally{
+            setLoading(false)
+          }
+          }   
         getData();       
 
 
@@ -49,8 +58,7 @@ const Shop = () =>{
 
       const goToPreviousPage = async() =>{
         const elem = document.body;
-        const getData = async () => {
-          console.log('Fetched data.')          
+        const getData = async () => {       
           const response = await axios.get(
             prevPage,
           );          
@@ -64,9 +72,6 @@ const Shop = () =>{
         window.scrollTo({top: 0})
       }
   
-
-      
-
       
 
 
@@ -84,7 +89,7 @@ const Shop = () =>{
         </div>
         <div className="right-product-page">
             {
-             showData?responseData.map((game) =>                
+             showData? loading? <h1 className='loading-data'>Loading...</h1>: responseData.map((game) =>                
               {                
                 const price =  Math.floor((Math.random() * 100)) + 0.99;
                 return (
@@ -98,14 +103,17 @@ const Shop = () =>{
                     price = {price} 
                   />
                 </Link>)}
-                ):<h1>Unfortunately the API does not provide this Data the left bar is just a proof of concept</h1>
+                ):<h1 className='loading-data'>Unfortunately the API does not provide this Data the left bar is just a proof of concept</h1>
             }
-            <div className="prev-btn-container span-prev">
+            {loading || !showData? '': <div className="prev-btn-container span-prev">
               <button onClick={goToPreviousPage} className='navigation-btns'>Previous page</button>
-            </div>
-            <div className="next-btn-container span-2">
+            </div>}
+            {loading || !showData? '':<div className="next-btn-container span-2">
               <button onClick={goToNextPage} className='navigation-btns'>Next page</button>
             </div>
+
+            }
+            
             {/* <button onClick={goToNextPage} className='navigation-btns span-2'>Next page</button> */}
 
           </div>
