@@ -6,7 +6,7 @@ nav{
     justify-content: space-between;
     z-index: 100;
     background-color: rgb(18, 26, 46);
-
+    height: 10%;
 }
 #root{
     height: 100%;
@@ -15,36 +15,25 @@ nav{
 
 
 .logo{
-    height: 8rem;
+    height: 7rem;
     width: auto;
-
-
+    padding-left: 2rem;
 }
 
 nav  a{
     color: white;
     text-decoration: none;
-
-
     position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-nav > ul a:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #FFF;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
+nav a:hover{
+    color: #B0D7FF;
+    transform:scale(1.2)
 }
 
-nav > ul a:hover:before{
-    visibility: visible;
-    width: 100%;
-}
+
 
 
 nav ul{
@@ -53,4 +42,26 @@ nav ul{
     width: 30%;
     justify-content: space-evenly;
     font-size: 2rem;
+}
+.cart-link{
+    position: relative;
+    padding-right: 2%;
+    
+}
+
+
+.cart-dot{
+    background-color: red;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 2rem;
+    position: absolute;
+    top:-10%;
+    right:0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    
 }
