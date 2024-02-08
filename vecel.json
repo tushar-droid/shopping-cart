@@ -3,6 +3,10 @@
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    },
+    {
+      "source": "/shop",
+      "destination": "/index.html"
     }
   ],
   "cleanUrls":false
